@@ -357,13 +357,13 @@ namespace SpaceShooter
                                     soundOn = !soundOn;
                                     if (soundOn)
                                     {
-                                        //mainMenuButtons[4].mainTexture = soundOnButtonTexture;
-                                        //mainMenuButtons[4].pressedTexture = soundOnButtonPressedTexture;
+                                        mainMenuButtons[4].mainTexture = soundOnButtonTexture;
+                                        mainMenuButtons[4].pressedTexture = soundOnButtonPressedTexture;
                                     }
                                     else
                                     {
-                                        //mainMenuButtons[4].mainTexture = soundOffButtonTexture;
-                                        //mainMenuButtons[4].pressedTexture = soundOffButtonPressedTexture;
+                                        mainMenuButtons[4].mainTexture = soundOffButtonTexture;
+                                        mainMenuButtons[4].pressedTexture = soundOffButtonPressedTexture;
                                     }
                                     b.unpress();
                                     SaveSettings();
@@ -810,6 +810,9 @@ namespace SpaceShooter
         }
         private void DrawMainMenu(GameTime gameTime)
         {
+            //drawing logo
+            spriteBatch.Draw(enemy3Texture, new Rectangle(270, 200, 540, 540), Color.White);
+
             //drawing highest score string
             spriteBatch.DrawString(Font, "HIGHSCORE: " + highScore.ToString(), new Vector2(170, 800), Color.White);
 
